@@ -1,0 +1,9 @@
+.container {
+    /* Sizes */
+    min-width: 98vw;
+    max-width: 98vw;
+    min-height: 100vh;
+    max-height: 100vh;
+    /* Display options*/
+    display: block;
+}
