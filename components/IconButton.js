@@ -3,6 +3,10 @@ import { Text, Box, Center } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import data from '../static/data'
+import BackEndContent from './BackEndContent'
+import FrontEndContent from './FrontEndContent'
+import PythonContent from './PythonContent'
+import OtherContent from './OtherContent'
 
 const MotionBox = motion(Box)
 const MotionText = motion(Text)
@@ -18,6 +22,25 @@ function IconButton({ yScrollPos, order, textContent, activeNode, setActiveNode 
     const [text, setText] = useState(textContent);
     const [fontSize, setFontSize] = useState(16)
 
+    const setContent = () => {
+        if(activeNode == 0) {
+            return (
+                <MotionText 
+                    fontSize={fontSize}
+
+                    variants={textVariants}
+                    initial='initial'
+                    animate='animate'
+                >
+                    {text}
+                </MotionText>
+            )
+        }
+        if (activeNode == 1) return  <BackEndContent yScrollPos={yScrollPos}/>
+        if (activeNode == 2) return  <FrontEndContent yScrollPos={yScrollPos}/>
+        if (activeNode == 3) return  <PythonContent yScrollPos={yScrollPos}/>
+        if (activeNode == 4) return  <OtherContent yScrollPos={yScrollPos}/>
+    }
 
     useEffect(() => {
         if (order == 1) setPosX(yScrollPos == 0 ? 0 : -100);
@@ -26,10 +49,9 @@ function IconButton({ yScrollPos, order, textContent, activeNode, setActiveNode 
         if (order == 4) setPosY(yScrollPos == 0 ? 0 : -100);
         
         if(activeNode == order) {
-            setText(data[order]);
             setFontSize(4);
             setOpacityAmount(1);
-            setScaleAmount(4);
+            setScaleAmount(5);
             setPosX(0);
             setPosY(0);
         }
@@ -94,8 +116,10 @@ function IconButton({ yScrollPos, order, textContent, activeNode, setActiveNode 
 
     //onclick events
     function selectIcon() {
-        window.scrollTo(0, order*100);
-        setActiveNode(order == activeNode ? 0 : order);
+        if(activeNode == 0 || activeNode == order) {
+            window.scrollTo(0, order*100);
+            setActiveNode(order == activeNode ? 0 : order);
+        }
     }
 
     return (
@@ -118,16 +142,7 @@ function IconButton({ yScrollPos, order, textContent, activeNode, setActiveNode 
 
         >
             <Center w="100%" h="100%">
-                <MotionText 
-                    p='1'
-                    fontSize={fontSize}
-
-                    variants={textVariants}
-                    initial='initial'
-                    animate='animate'
-                >
-                    {text}
-                </MotionText>
+                {setContent()}
             </Center>
         </MotionBox>
     )

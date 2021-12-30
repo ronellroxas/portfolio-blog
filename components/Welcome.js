@@ -3,19 +3,22 @@ import { useState, useEffect } from 'react';
 import { Center, Text } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import MenuText from './MenuText';
+import MenuItems from '../static/menuItems';
 
 const MotionCenter = motion(Center);
 
-function Welcome({yScrollPos}) {
-
+function Welcome({activeNode, yScrollPos}) {
+    
     const centerVariants = {
         initial: {
-            width: '100vw'            
+            width: '100vw'
         },
         animate: {
             width: yScrollPos == 0 ? '100vw' : "50vw",
+            opacity: 1,
+            rotate: activeNode == 0 ? 0:-90,
             transition: {
-                delay: 0.5,
+                delay: activeNode != 0 ? 0: 0.5,
                 duration: 0.5
             }
         }
@@ -29,11 +32,9 @@ function Welcome({yScrollPos}) {
                 initial='initial'
                 animate='animate'
         >
-            <MenuText yScrollPos={yScrollPos} content={"WELCOME"} min={0} max={100}/>
-            <MenuText yScrollPos={yScrollPos} content={"WEBDEV"} min={100} max={200}/>
-            <MenuText yScrollPos={yScrollPos} content={"APPDEV"} min={200} max={300}/>
-            <MenuText yScrollPos={yScrollPos} content={"ABOUT ME"} min={300} max={400}/>
-            <MenuText yScrollPos={yScrollPos} content={"OTHERS"} min={400} max={500}/>
+            { MenuItems.map((value, index) => {
+                return <MenuText key={index} yScrollPos={yScrollPos} content={value} min={index*100} max={index*100+100}/>
+            })}
         </MotionCenter>
     )
 }

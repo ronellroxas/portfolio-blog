@@ -2,6 +2,7 @@ import { Center, Icon, Text  } from '@chakra-ui/react'
 import { motion} from 'framer-motion'
 import IconButton from './IconButton'
 import { useState, useEffect } from 'react'
+import MenuItems from '../static/menuItems'
 
 const MotionCenter = motion(Center)
 
@@ -9,11 +10,10 @@ function RotatingIcons(props) {
     /*
         Welcome content for first ContentBox
     */
-    const [activeNode, setActiveNode] = useState(0);
 
     useEffect(() => {
-        if(props.yScrollPos/100 != activeNode) {
-            setActiveNode(0)
+        if(props.yScrollPos/100 != props.activeNode) {
+            props.setActiveNode(0)
         }
     }, 
     [props.yScrollPos]);
@@ -27,7 +27,7 @@ function RotatingIcons(props) {
         },
         show: {
             opacity: props.yScrollPos == 0 ? 0.5: 1,
-            width: props.yScrollPos == 0 ? '100vw': '50vw',
+            width: props.yScrollPos == 0 || props.activeNode != 0 ? '100vw': '50vw',
             rotate: props.yScrollPos/100*90-90,
 
             transition: {
@@ -47,8 +47,7 @@ function RotatingIcons(props) {
         }
     }
 
-    const texts = ['WEBDEV', 'APPDEV', 'ABOUT ME', 'OTHERS'];
-
+    const texts = MenuItems.slice(1);
     return (
         <MotionCenter
                 pos='fixed'
@@ -61,13 +60,9 @@ function RotatingIcons(props) {
         >
             {
                 texts.map((value, i) => {
-                    return <IconButton key={i} {...props} order={i+1} textContent={value} activeNode={activeNode} setActiveNode={setActiveNode}/>
+                    return <IconButton key={i} {...props} order={i+1} textContent={value} activeNode={props.activeNode} setActiveNode={props.setActiveNode}/>
                 })
             }
-            {/* <IconButton {...props} order={1} textContent={"WEBDEV"} activeNode={activeNode} setActiveNode={setActiveNode}/>
-            <IconButton {...props}  order={2} textContent={"APPDEV"} activeNode={activeNode} setActiveNode={setActiveNode}/>
-            <IconButton {...props}  order={3} textContent={"ABOUT ME"} activeNode={activeNode} setActiveNode={setActiveNode}/>
-            <IconButton {...props}  order={4} textContent={"OTHERS"} activeNode={activeNode} setActiveNode={setActiveNode}/> */}
         </MotionCenter>
     )
 }

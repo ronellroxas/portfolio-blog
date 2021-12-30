@@ -18,6 +18,7 @@ function BottomScrollText({yScrollPos}) {
                     animate={{ 
                         opacity: yScrollPos > 0 ? [0.5, 1, 0.5] : 0.5,
                         translateY: yScrollPos > 0 ? [0, -50, 0] : 0,
+                        scale: 1,
                         y: 0
                     }}
                     transition={{ 
