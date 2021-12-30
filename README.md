@@ -1,1 +1,3 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+# Portfolio Web Application
+
+Trying to learn NextJS and animations using FramerMotion.
