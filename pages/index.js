@@ -48,7 +48,7 @@ export default function Home() {
     <>
       <Head>
         <title>RNL RXS</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="portfolio-blog/favicon.ico" />
       </Head>
       <Guide onOpen={onOpen}/>
       <Center>
