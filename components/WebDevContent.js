@@ -29,7 +29,7 @@ function WebDevContent({yScrollPos}) {
             <Text
                 fontSize={fontSize}
             >
-                Majority of my backend projects are APIs.
+                Web Development, specifically full stack, is one of my major interests.
             </Text>
             <Text
                 fontSize={fontSize}
@@ -44,12 +44,12 @@ function WebDevContent({yScrollPos}) {
             <Text
                 fontSize={fontSize}
             >
-                I love learning about new tech stacks, coding practices, and frameworks. I also am very interested in learning about proper coding practices to improve backend efficiency, security, and reliability.
+                For <b>FRONTEND</b>, I have experience using <b>React and NextJS</b>. This website is built using NextJS with <b>Chakra-UI and FramerMotion</b> for the animations.
             </Text>
             <Text
                 fontSize={fontSize}
             >
-                In general, I would say that I would rate my backend development skills an <b>8.5/10</b>.
+                I love learning about new tech stacks, coding practices, and frameworks. I started building this website because I was very interested in learning NextJS and animations.
             </Text>
 
             {/** CLOSE TEXT */}

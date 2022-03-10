@@ -1,4 +1,4 @@
-const MenuItems = ['WELCOME', 'BACKEND', 'FRONTEND', 'PYTHON', 'OTHERS'];
+const MenuItems = ['WELCOME', 'WEBDEV', 'PROJECTS', 'PYTHON', 'OTHERS'];
 
 
 export default MenuItems;

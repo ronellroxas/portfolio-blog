@@ -29,17 +29,22 @@ function PythonContent({yScrollPos}) {
             <Text
                 fontSize={fontSize}
             >
-                For <b>AI MODELS</b>, I love doing machine learning and deep learning research. 
+                I like using python since I am very interested in AI Models and DataScience research.
             </Text>
             <Text
                 fontSize={fontSize}
             >
-                For <b>DATASCIENCE</b>, I enjoy doing datascience a lot and I am really interested in learning more. 
+                For <b>AI MODELS</b>, I have experience in performing Facial Emotion Recognition and image processing. For my thesis, it is focused on NLP Personality Recognition. Most of my academic projects are NLP related.
             </Text>
             <Text
                 fontSize={fontSize}
             >
-                In general, I would rate my python skills a 9/10. I really enjoy CS research and DataScience.
+                For <b>DATASCIENCE</b>, I enjoy doing datascience a lot and I am really interested in learning more. I have experience in processing geospatial data from our DataScience class.
+            </Text>
+            <Text
+                fontSize={fontSize}
+            >
+                My internship also used Python which involves data transformations.
             </Text>
 
             {/** CLOSE TEXT */}

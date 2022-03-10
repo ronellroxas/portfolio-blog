@@ -2,9 +2,8 @@ import styles from '../styles/IconButton.module.css'
 import { Text, Box, Center } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
-import data from '../static/data'
-import BackEndContent from './BackEndContent'
-import FrontEndContent from './FrontEndContent'
+import WebDevContent from './WebDevContent'
+import ProjectsContent from './ProjectsContent'
 import PythonContent from './PythonContent'
 import OtherContent from './OtherContent'
 
@@ -36,8 +35,8 @@ function IconButton({ yScrollPos, order, textContent, activeNode, setActiveNode 
                 </MotionText>
             )
         }
-        if (activeNode == 1) return  <BackEndContent yScrollPos={yScrollPos}/>
-        if (activeNode == 2) return  <FrontEndContent yScrollPos={yScrollPos}/>
+        if (activeNode == 1) return  <WebDevContent yScrollPos={yScrollPos}/>
+        if (activeNode == 2) return  <ProjectsContent yScrollPos={yScrollPos}/>
         if (activeNode == 3) return  <PythonContent yScrollPos={yScrollPos}/>
         if (activeNode == 4) return  <OtherContent yScrollPos={yScrollPos}/>
     }
