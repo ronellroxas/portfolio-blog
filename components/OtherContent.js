@@ -44,7 +44,7 @@ function OtherContent({yScrollPos}) {
             <Text
                 fontSize={fontSize}
             >
-                In summary, I am a full stack developer and I like <b>WEB DEVELOPMENT</b>. I am also really interested in <b>DATASCIENCE</b>.
+                In summary, I am a full stack developer and I like <b>WEB DEVELOPMENT</b>. I am also really interested in <b>DATASCIENCE</b> and <b>MACHINE LEARNING</b>.
             </Text>
             <Text
                 fontSize={fontSize}
